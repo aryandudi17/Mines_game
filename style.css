@@ -1,0 +1,127 @@
+/* General body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Header Styling */
+.header {
+    background-color: #222;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 24px;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Game grid container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #34495e;
+    border: 2px solid #95a5a6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 24px;
+    color: transparent;
+    border-radius: 8px;
+}
+
+.cell:hover {
+    background-color: #7f8c8d;
+    transform: scale(1.1);
+}
+
+.diamond {
+    background-color: #f1c40f;
+    color: #f39c12;
+}
+
+.bomb {
+    background-color: #e74c3c;
+    color: #c0392b;
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Control panel styles at the bottom */
+.control-panel {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.control-panel input[type="number"],
+.control-panel select {
+    width: 80px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+/* Green Button Styles */
+.button.green {
+    background-color: #27ae60;
+}
+
+.button.green:hover {
+    background-color: #2ecc71;
+}
+
+/* Status text */
+#gameStatus {
+    font-size: 18px;
+    margin-bottom: 20px;
+}

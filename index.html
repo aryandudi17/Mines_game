@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Mines Game with Balance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div>Diamond Mines Game</div>
+        <div>
+            <label for="currency">Currency:</label>
+            <select id="currency" onchange="updateDisplayCurrency()">
+                <option value="USDT">USDT</option>
+                <option value="BTC">BTC</option>
+            </select>
+        </div>
+        <div>
+            <span id="balance">1000 USDT</span>
+        </div>
+    </div>
+    
+    <!-- Game Container -->
+    <div class="game-container">
+        <div id="gameStatus">Select your bet, currency, and mines to start playing.</div>
+        <div id="game" class="grid"></div>
+    </div>
+
+    <!-- Control Panel at the Bottom -->
+    <div class="control-panel">
+        <label for="betAmount">Bet Amount:</label>
+        <input type="number" id="betAmount" placeholder="Enter Bet" min="1" />
+
+        <label for="mineCount">Mines:</label>
+        <input type="number" id="mineCount" min="1" max="24" value="5" />
+
+        <button class="button green" onclick="startGame()">Place Bet</button>
+        <button class="button green" onclick="cashOut()" id="cashOutButton" disabled>Cash Out</button>
+        <button class="button" onclick="doubleBet()">2x</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
